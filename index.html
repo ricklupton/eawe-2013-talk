@@ -86,7 +86,7 @@
             19 September 2013
           </small></p>
 
-
+          <center style="clear: both; margin-top: 100px;"><br/><br/><img src="uc-colour.gif" width="30%"/></center>
         </section>
 
         <section>
@@ -160,7 +160,7 @@
             <br/>
             <div class="fragment">
             <h3>The offshore structures approach</h3>
-            <p>6-dof rigid models; criticised for not modelling WT structure</p>
+            <p>6-dof rigid models <!-- ; criticised for not modelling WT structure --></p>
             <p>e.g. Wayman et al (2006), Tracy (2007), Matha (2009)...</p>
             </div>
 
@@ -218,7 +218,7 @@
             <h2>Outline</h2>
 
             <h4>Structural dynamics</h4>
-            Are the complex dynamics of <em>an elastic blade in a rotating rotor on a moving platform</em> fully captured by the linearised model?
+            Are the complex dynamics of <em>an elastic blade, in a rotating rotor, on a moving platform,</em> fully captured by the linearised model?
 
             <h4>Hydrodynamics</h4>
             Are the non-linear <em>2nd-order forces</em> necessary to include?
@@ -434,7 +434,7 @@
 
           <section>
             <h2 style="margin-bottom: 20px;">Non-linear slow drift forces</h2>
-            <p>Non-linear interactions cause <span class="fragment fade-out"><em>mean</em>, <em>sum</em> &amp;</span> <em>difference</em> frequencies</p>
+            <p>Non-linear interactions cause <em>mean</em><span class="fragment fade-out">, <em>sum</em></span> &amp; <em>difference</em> frequencies</p>
 
             <div class="fragment">
                 <div style="float: left; width: 65%">
@@ -492,9 +492,9 @@
           </section>
 
           <section>
-            <h2>Hydrodynamics - conclusions</h2>
+            <h2>Hydrodynamics &mdash; summary</h2>
 
-            <ul>
+            <ul class="spaced">
               <li>Frequency-domain analysis is well-established from the offshore industry</li>
               <li>Using linear diffraction theory, slow-drift forces and <a href="#/stochastic">linearised drag forces</a> we can calculate response spectra</li>
             </ul>
@@ -502,66 +502,6 @@
             <h4>Slow drift motion</h4>
             <p>This doesn't seem to be as important for wind turbines as bigger floating platforms</p>
 
-          </section>
-        </section>
-
-        <section>
-          <section data-background="wind.jpg">
-            <div class="stripe">
-              <h1>Aerodynamics,<br/>control, ...</h1>
-            </div>
-          </section>
-
-          <section>
-            <h4 style="margin-top: 0">Simple approaches</h4>
-            <ul>
-              <li>Look-up table of rotor thrust</li>
-            </ul>
-
-            <div class="fragment">
-              <h4>Blade-element/momentum (BEM)</h4>
-              <ul>
-                <li>Simplest approach: frozen wake</li>
-                <li>... add dynamic inflow</li>
-                <li>... add dynamic stall / unsteady aerofoil behaviour</li>
-              </ul>
-            </div>
-
-            <div class="fragment">
-              <p><br/><img src="Hansen2004.png">
-              <small style="color: grey">
-Hansen, MH. <i>Aeroelastic stability analysis of wind turbines using an eigenvalue approach</i>. Wind Energy 7(2), 2004.</small></p>
-            </div>
-
-            <aside class="notes">
-              <ul>
-                <li>Frozen wake used by Halfpenny</li>
-                <li>It's non-linear but the linearised model does ok</li>
-                <li>But this obviously depends on how big the range of AoA is</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
-            <h2>Control system</h2>
-
-            <ul class="spaced">
-              <li>Not trying to model transient behaviour</li>
-
-              <li>Non-linear variations in operating point: <ul>
-                <li>Quadratic optimum speed below rated</li>
-                <li>Pitch gain scheduling above rated</li>
-              </ul> </li>
-
-              <li>Changeover between control regimes at rated probably problematic</li>
-            </ul>
-
-            <aside class="notes">
-              <ul>
-                <li>Obviously has an important effect</li>
-                <li>Again, we'll be looking at this in more detail</li>
-              </ul>
-            </aside>
           </section>
         </section>
 
@@ -610,6 +550,66 @@ Hansen, MH. <i>Aeroelastic stability analysis of wind turbines using an eigenval
 
             </aside>
             </section>
+
+            <section data-background="wind.jpg">
+                <div class="stripe">
+                    <h1>Aerodynamics,<br/>control, ...</h1>
+                </div>
+            </section>
+
+            <section>
+                <h4 style="margin-top: 0">Simple approaches</h4>
+                <ul>
+                    <li>Look-up table of rotor thrust</li>
+                </ul>
+
+                <div class="fragment">
+                    <h4>Blade-element/momentum (BEM)</h4>
+                    <ul>
+                        <li>Simplest approach: frozen wake</li>
+                        <li>... add dynamic inflow</li>
+                        <li>... add dynamic stall / unsteady aerofoil behaviour</li>
+                    </ul>
+                </div>
+
+                <div class="fragment">
+                    <p><br/><img src="Hansen2004.png">
+                    <small style="color: grey">
+                        Hansen, MH. <i>Aeroelastic stability analysis of wind turbines using an eigenvalue approach</i>. Wind Energy 7(2), 2004.</small></p>
+                    </div>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Frozen wake used by Halfpenny</li>
+                            <li>It's non-linear but the linearised model does ok</li>
+                            <li>But this obviously depends on how big the range of AoA is</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Control system</h2>
+
+                    <ul class="spaced">
+                        <li>Not trying to model transient behaviour</li>
+
+                        <li>Non-linear variations in operating point: <ul>
+                        <li>Quadratic optimum speed below rated</li>
+                        <li>Pitch gain scheduling above rated</li>
+                        </ul> </li>
+
+                        <li>Changeover between control regimes at rated probably problematic</li>
+                    </ul>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Obviously has an important effect</li>
+                            <li>Again, we'll be looking at this in more detail</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+
         </section>
 
       </div>
