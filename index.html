@@ -74,7 +74,7 @@
           <h2>Efficient modelling of<br/>floating wind turbines</h2>
           <br/>
           <p>
-            Richard Lupton<br/>Prof. Robin Langley
+            Rick Lupton<br/>Prof. Robin Langley
           </p>
           <br/>
           <p style="float: left;">
@@ -90,9 +90,9 @@
         </section>
 
         <section>
-          <section>
-          <h1>Introduction</h1>
-          </section>
+          <!-- <section> -->
+          <!-- <h1>Introduction</h1> -->
+          <!-- </section> -->
 
           <section>
             <h2>Floating wind turbines</h2>
@@ -128,7 +128,7 @@
 
             <h4>Speed is particularly important for floating turbines</h4>
             <ul>
-              <li><strong>Even more</strong> Design Load Case simulations may be required by upcoming standards</li>
+              <li>Design Load Cases: <strong>even more</strong> simulations than for offshore may be needed</li>
               <li>Low natural frequencies (~0.01 Hz) require <strong>long simulations</strong></li>
               <li>New subject so <strong>design optimization studies</strong></li>
             </ul>
@@ -218,12 +218,13 @@
             <h2>Outline</h2>
 
             <h4>Structural dynamics</h4>
-            Are the complex dynamics of <em>an elastic blade, in a rotating rotor, on a moving platform,</em> fully captured by the linearised model?
+            Does a linearised model fully capture the complex dynamics of <em>an elastic blade, in a rotating rotor, on a moving platform</em>?
 
             <h4>Hydrodynamics</h4>
-            Are the non-linear <em>2nd-order forces</em> necessary to include?
+            Are the non-linear <em>2nd-order forces</em> necessary?
 
-            <h4>Aerodynamics, control system</h4>
+            <!-- <h4>Aerodynamics, control system</h4> -->
+            <h4>Example results: platform motion &amp; deflection responses</h4>
 
           </section>
         </section>
@@ -235,23 +236,27 @@
 
           <section>
             <!-- <h2>Periodic system</h2> -->
+            <h2 style="margin-bottom: 25px">Multi-Blade Coordinate transform</h2>
 
-            <div class='left' style='float:left;width:40%'>
+            <div class='left' style='float:left;width:35%'>
               <img src="WindFloat.jpg">
 
               <p>Can't directly linearise due to periodic steady state.</p>
             </div>
-            <div class='right' style='float:right;width:58%'>
+            <div class='right' style='float:right;width:64%'>
               <p>
                 $$ q_i = a_0 + a_1 \sin{\Omega t} + b_1 \cos{\Omega t} $$
               </p>
 
-              <p>Multi-Blade Coordinate (MBC) / Coleman transform removes periodicy if <strong>isotropic</strong>
-              and <strong>&ge; 3</strong> blades</p>
+              <ul>
+              <li>Removes periodicy if <strong>&ge; 3</strong> blades and <strong>isotropic</strong>.</li>
+              <li>If not isotropic, some periodicy remains <br/><em> &ndash; is this important?</em></li>
+              </ul>
 
-              <video controls loop>
+              <br/>
+              <center><video controls loop width="70%">
                 <source src="mode8.ogv" type="video/ogg">
-              </video>
+              </video></center>
             </div>
 
             <aside class="notes">
@@ -293,44 +298,6 @@
           </section>
 
           <section>
-            <p style="font-size: 80%;">
-      \begin{multline}
-      \ddot{\alpha} +
-      \biggl[
-      \underbrace{\vphantom{\Biggr|} \omega_f^2}_{\substack{\mbox{flap} \\ \mbox{stiffness}}} +
-      \underbrace{\vphantom{\Biggr|} \Omega^2}_{\substack{\mbox{centrifugal} \\ \mbox{stiffness (rotor)}}} \\ +
-      \underbrace{\vphantom{\Biggr|} \dot{\phi}^2 \left(\lambda h\cos \theta +
-          \frac{1}{2} \cos 2\theta - \frac{1}{2} \right)}_{\substack{\mbox{centrifugal stiffness} \\ \mbox{(platform rotation)}}} -
-      \underbrace{\vphantom{\Biggr|} \lambda g \cos \theta}_{\substack{\mbox{gravity}\\ \mbox{stiffness}}}
-      \biggr] \alpha \\ =
-      \underbrace{\vphantom{\Biggr|} \lambda g\phi}_{\substack{\mbox{out-of-plane}\\ \mbox{gravity load}}} +
-      \underbrace{\vphantom{\Biggr|} 2\dot{\phi}\Omega \sin \theta}_{\substack{\mbox{Coriolis}\\ \mbox{force}}} -
-      \underbrace{\vphantom{\Biggr|} \ddot{\phi}\left(\lambda h+\cos \theta
-        \right)}_{\substack{\mbox{platform acceleration}\\ \mbox{force}}}
-      \end{multline}
-            </p>
-            <div style="position: absolute; right: 0px; top: 50px; border: 3px dashed blue; padding: 20px;">
-              $ \phi = A \sin{\omega t} $
-            </div>
-
-            <div class="fragment">
-              <img src="maroon_arrow.png" style="position: absolute; transform: rotate(310deg); -webkit-transform: rotate(310deg); left: 500px; top: 629px;">
-              <div style="position: absolute; left: 130px; top: 710px; color: #880044;">
-                $\sin{\omega t} \cos{\Omega t} = \frac{1}{2} \left[ \sin{(\omega + \Omega)t} + \sin{(\omega - \Omega)t} \right]$
-              </div>
-            </div>
-
-            <aside class="notes">
-              Example - flap response to pitching motion
-
-              <ul>
-                <li>It's complicated - periodic stiffness</li>
-                <li>Forcing terms produce w+W, w-W</li>
-              </ul>
-            </aside>
-          </section>
-
-          <section>
             Spectrum of $x(A) \; / \; A$ <small>&mdash; for two amplitudes $A$</small>
             <img src="response_harmonics.png" width="100%">
 
@@ -345,7 +312,7 @@
               <h4 style="margin-top: 0.5em">Conclusions</h4>
               <ol>
                 <li>Multiple ways of exciting blade resonance</li>
-                <li>Possibility of overall non-linear response</li>
+                <li class="fragment">Possibility of overall non-linear response <em>&ndash; is this important?</em></li>
               </ol>
             </div>
 
@@ -364,7 +331,8 @@
           <section>
             <p>$$ \mbox{&#8220;non-linearity&#8221;} = \frac{ \sigma_x(A) / A }{ \sigma_x(A_0) / A_0 } - 1 $$</p>
 
-            <img src="nonlin.png">
+            <p>Amplitude of platform motion needed to get <strong>4%</strong> non-linearity:
+            <img src="nonlin.png"></img>
 
             <div class="fragment">
               <h3>Conclusion</h3>
@@ -433,8 +401,12 @@
           </section>
 
           <section>
-            <h2 style="margin-bottom: 20px;">Non-linear slow drift forces</h2>
-            <p>Non-linear interactions cause <em>mean</em><span class="fragment fade-out">, <em>sum</em></span> &amp; <em>difference</em> frequencies</p>
+            <h2 style="margin-bottom: 20px;">Non-linear slow drift motion</h2>
+            <p>Interactions between waves at&nbsp; $f_1$ and&nbsp; $f_2$ <br/>
+            cause forces at&nbsp;
+            <span class="fragment fade-out"><em>$f_1 + f_2$</em> and </span>&nbsp;
+            <em>$f_1 - f_2$</em>
+            </p>
 
             <div class="fragment">
                 <div style="float: left; width: 65%">
@@ -531,7 +503,7 @@
 
             <li class="fragment">No fundamental problems found so far...</li>
 
-            <li class="fragment"><em>Future work:</em> consider aerodynamics, control...</li>
+            <li class="fragment"><em>Future work:</em> consider <a href="#/aero">aerodynamics</a>, <a href="#/control">control</a>...</li>
           </ul>
 
           <div class="fragment">
@@ -545,6 +517,46 @@
             <section>
                 <h1>...</h1>
             </section>
+
+          <section>
+            <p style="font-size: 80%;">
+      \begin{multline}
+      \ddot{\alpha} +
+      \biggl[
+      \underbrace{\vphantom{\Biggr|} \omega_f^2}_{\substack{\mbox{flap} \\ \mbox{stiffness}}} +
+      \underbrace{\vphantom{\Biggr|} \Omega^2}_{\substack{\mbox{centrifugal} \\ \mbox{stiffness (rotor)}}} \\ +
+      \underbrace{\vphantom{\Biggr|} \dot{\phi}^2 \left(\lambda h\cos \theta +
+          \frac{1}{2} \cos 2\theta - \frac{1}{2} \right)}_{\substack{\mbox{centrifugal stiffness} \\ \mbox{(platform rotation)}}} -
+      \underbrace{\vphantom{\Biggr|} \lambda g \cos \theta}_{\substack{\mbox{gravity}\\ \mbox{stiffness}}}
+      \biggr] \alpha \\ =
+      \underbrace{\vphantom{\Biggr|} \lambda g\phi}_{\substack{\mbox{out-of-plane}\\ \mbox{gravity load}}} +
+      \underbrace{\vphantom{\Biggr|} 2\dot{\phi}\Omega \sin \theta}_{\substack{\mbox{Coriolis}\\ \mbox{force}}} -
+      \underbrace{\vphantom{\Biggr|} \ddot{\phi}\left(\lambda h+\cos \theta
+        \right)}_{\substack{\mbox{platform acceleration}\\ \mbox{force}}}
+      \end{multline}
+            </p>
+            <div style="position: absolute; right: 0px; top: 50px; border: 3px dashed blue; padding: 20px;">
+              $ \phi = A \sin{\omega t} $
+            </div>
+
+            <div class="fragment">
+              <img src="maroon_arrow.png" style="position: absolute; transform: rotate(310deg); -webkit-transform: rotate(310deg); left: 500px; top: 629px;">
+              <div style="position: absolute; left: 130px; top: 710px; color: #880044;">
+                $\sin{\omega t} \cos{\Omega t} = \frac{1}{2} \left[ \sin{(\omega + \Omega)t} + \sin{(\omega - \Omega)t} \right]$
+              </div>
+            </div>
+
+            <aside class="notes">
+              Example - flap response to pitching motion
+
+              <ul>
+                <li>It's complicated - periodic stiffness</li>
+                <li>Forcing terms produce w+W, w-W</li>
+              </ul>
+            </aside>
+          </section>
+
+
 
             <section id="stochastic">
             <h2>Stochastic linearisation</h2>
@@ -566,9 +578,9 @@
             </aside>
             </section>
 
-            <section data-background="wind.jpg">
+            <section data-background="wind.jpg" id="aero">
                 <div class="stripe">
-                    <h1>Aerodynamics,<br/>control, ...</h1>
+                    <h1>Aerodynamics</h1>
                 </div>
             </section>
 
@@ -578,7 +590,7 @@
                     <li>Look-up table of rotor thrust</li>
                 </ul>
 
-                <div class="fragment">
+                <div class="">
                     <h4>Blade-element/momentum (BEM)</h4>
                     <ul>
                         <li>Simplest approach: frozen wake</li>
@@ -587,7 +599,7 @@
                     </ul>
                 </div>
 
-                <div class="fragment">
+                <div class="">
                     <p><br/><img src="Hansen2004.png">
                     <small style="color: grey">
                         Hansen, MH. <i>Aeroelastic stability analysis of wind turbines using an eigenvalue approach</i>. Wind Energy 7(2), 2004.</small></p>
@@ -602,7 +614,7 @@
                     </aside>
                 </section>
 
-                <section>
+                <section id="control">
                     <h2>Control system</h2>
 
                     <ul class="spaced">
